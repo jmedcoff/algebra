@@ -1,0 +1,87 @@
+\documentclass{amsart}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{geometry}
+\geometry{a4paper}
+
+\author{Jason Medcoff}
+\date{}
+\title{Homework 1}
+
+\begin{document}
+	
+	\maketitle
+	
+	\noindent{\textbf{22.}}
+	Begin by factoring $\alpha$; we obtain
+	$$ (1\ 9)(2\ 8)(3\ 7)(4\ 6)(5) . $$
+	We know $\text{sgn}(\alpha) = (-1)^{n-t}$, and here we have $n=9$ and $t=5$. Thus, $\text{sgn}(\alpha) = (-1)^{4} = 1$.
+	To find the inverse, swap the rows:
+	$$ \alpha^{-1} = 
+	\begin{pmatrix}
+	9 & 8 & 7 & 6 & 5 & 4&3&2&1 \\
+	1&2&3&4&5&6&7&8&9
+	\end{pmatrix} . $$
+	Sorting on the first row, we observe
+	$$ \alpha^{-1} = 
+	\begin{pmatrix}
+	1&2&3&4&5&6&7&8&9 \\
+	9 & 8 & 7 & 6 & 5 & 4&3&2&1
+	\end{pmatrix} = \alpha . $$
+	
+	\noindent{\textbf{24.}}
+	i) For every $r$-cycle in $S_n$, we can write the cycle $r$ different ways, by starting on a different number. For example, (1 2 3 4) can also be written as (2 3 4 1). To create a cycle, we want to choose $r$ numbers from $1, \dots, n$. The number of ways to do this is 
+	$$ \frac{n!}{(n-r)!} . $$
+	To compensate for overcounting, divide by the number of ways we write the same cycle: $r$. So, we have
+	$$ \frac{n!}{r(n-r)!} $$
+	$r$-cycles in $S_n$.
+	
+	ii) To create disjoint $r$-cycles, we want to choose $kr$ elements from $1,\dots,n$. This is
+	$$ \frac{n!}{(n-kr)!} . $$	
+	We can permute the cycles in any order we like, giving $k!$ possibilities. In addition, each cycle can be written in $r$ equivalent ways; the total for $k$ $r$-cycles is $r^k$. So, to compensate for overcounting, divide.
+	$$ \frac{1}{k!} \frac{1}{r^k} \frac{n!}{(n-kr)!} $$
+	
+	$\newline$
+	\noindent{\textbf{25.}}
+	i) Suppose we have distinct numbers $i_1,\dots,i_r$ and $\alpha$ sends $i_k$ to $i_{k+1}$ for $k<r$, and sends $i_r$ to $i_1$. Taking $\alpha(i_k)$ gives $i_{k+1}$, $\alpha^2(i_k)$ gives $i_{k+2}$, and in general, $\alpha^r(i_k)$ gives $i_{k+r}$. But $k+r$ must be reduced modulo $r$ since $k+r > r$. Then $k+r \equiv k \mod r$, and so $\alpha^r(i_k) = i_k$ $\forall$ $1 \leq k \leq r$. Thus $\alpha^r = (1)$.
+	
+	ii) We know from (i) that $\alpha^k(i_j) = i_{j+k}$. Suppose $k<r$. Then $\alpha^k(i_1) = i_{k+1} \neq i_1$, since each $i$ is distinct. If $k=r$, then $\alpha^r(i_{j}) = i_{j+r} = i_j$ $\forall j$. So there does not exist a $k<r$ satisfying $\alpha^k = (1)$ and $r$ is the least positive integer that does satisfy the conditions.
+	
+	$\newline$
+	\noindent{\textbf{26.}}
+	Suppose we have $\alpha \in S_n$ such that $\alpha = (a_1\ a_2\ \dots\ a_r)$. We can write $\alpha$ as $(a_1\ a_2)(a_2\ a_3)\cdots(a_{r-1}\ a_r)$, which comes to $r-1$ transpositions. If $r-1$ is even, $r$ is odd, and vice versa. We know from Theorem 2.40 that the number of transpositions in a product give the parity of the product. So, $\alpha$ is even if $r$ is odd, and $\alpha$ is odd if $r$ is even.
+	
+	$\newline$
+	\noindent{\textbf{27.}}
+	Consider $j-i$. If $j-i = 1$, we have $(i\ i+1)$, clearly a product of one adjacency.
+	Suppose the conclusion is true for $j-i = k$. Then consider $j-i = k+1$. We have
+	$$ (i\ i+k+1) = (i\ i+k)(i+k\ i+k+1)(i+k\ i) . $$
+	We know from the induction hypothesis that $(i\ i+k)$ and $(i+k\ i)$ are the products of an odd number of adjacencies. $(i+k\ i+k+1)$ is one adjacency. The sum of two odd numbers is even, and the sum of an even number and one is odd, so $(i\ i+k+1)$ is a product of an odd number of adjacencies.
+	
+	$\newline$
+	\noindent{\textbf{30.}}
+	i) We write $(\alpha\beta)^k$ as
+	$$ (\alpha\beta)(\alpha\beta) \cdots (\alpha\beta)\ \ \text{k times.} $$
+	Composition of permutations is associative, so the parenthesis are irrelevant. Since the permutations commute, we can move the $\alpha$s and $\beta$s to opposite sides of the product:
+	$$ \alpha \alpha \cdots \alpha \beta \beta \cdots \beta = \alpha^k\beta^k .$$
+	
+	ii) Take $\alpha = (1\ 2)$ and $\beta = (2\ 3)$. Then $(\alpha\beta)^2 = (1\ 3\ 2)$ while $\alpha^2\beta^2 = (1)$.
+	
+	$\newline$
+	\noindent{\textbf{32.}}
+	We can observe that $S_n$ has cardinality $n!$, and so we want to show that the even permutations in $S_n$ make up half of that. Then, the odd permutations must make up the other half, and the subsets containing the odd and even permutations have the same size. Let $A_n$ contain the even permutations, and let $O_n$ contain the odd ones. 
+	
+	Fix some $\beta \in O_n$. Define $f: A_n \rightarrowtail O_n$ such that 
+	$$f(\alpha) = \beta\alpha .$$
+	We know that the product of an odd and an even permutation yields an odd permutation.
+	
+	Suppose that $f(\alpha) = f(\alpha')$ for $\alpha$, $\alpha'$ in $A_n$. Then we have $\beta\alpha = \beta\alpha'$, which gives $\alpha = \alpha'$. So $f$ is injective.
+	
+	Suppose we have a $\sigma \in O_n$. We know that $\beta^{-1}\sigma$ is an even permutation, so we compute 
+	$$f(\beta^{-1}\sigma) = \beta\beta^{-1}\sigma = \sigma . $$
+	So $f$ is surjective.
+	
+	Therefore, $f$ is a bijection from $A_n$ to $O_n$, so the sets have the same size. Thus, each must have a size of one half of $S_n$, or $\frac{n!}{2}$.
+	
+	
+\end{document}
