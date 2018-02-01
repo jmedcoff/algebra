@@ -1,0 +1,117 @@
+\documentclass{amsart}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{a4paper}
+
+\author{Jason Medcoff}
+\date{}
+\title{Homework 2}
+
+\begin{document}
+	
+	\maketitle
+	
+	\noindent{\textbf{38.}}
+	This permutation is not a product of disjoint cycles, so we begin by writing it in two line notation.
+	$$ \begin{pmatrix}
+	1 & 2 & 3 & 4 & 5 \\
+	5 & 3 & 2 & 1 & 4
+	\end{pmatrix} $$
+	Now we can observe the disjoint cycles, and write the permutation as
+	$$ \alpha = (1\ 5\ 4)(2\ 3) . $$
+	Noting that lcm(3, 2) = 6, the order of $\alpha$ is 6. The inverse is easily obtained from the two line notation, by swapping rows and sorting on the top row:
+	$$ \begin{pmatrix}
+	1 & 2 & 3 & 4 & 5 \\
+	4 & 3 & 2 & 5 & 1
+	\end{pmatrix} . $$
+	Finally, to compute the parity, we go back to $\alpha$ as a product of disjoint cycles. We have a permutation on 5 letters, with 2 cycles, which gives $\text{sgn}(\alpha) = (-1)^{5-2} = -1$. So $\alpha$ has odd parity.
+	
+	The permutation in 2.22 can be factored as $$ (1\ 9)(2\ 8)(3\ 7)(4\ 6)(5) . $$
+	Then we observe that the least common multiple is 2. Thus, the order is 2.
+	The permutation in 2.28 can be written as
+	$$ \begin{pmatrix}
+	1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+	1 & 6 & 9 & 5 & 3 & 10 & 2 & 8 & 4 & 7
+	\end{pmatrix} $$
+	Factoring, we get
+	$$ (1)(2\ 6\ 10\ 7)(3\ 9\ 4\ 5)(8) . $$
+	The least common multiple is clearly 4, so the order is 4.
+	
+	$\newline$
+	\noindent{\textbf{39.}}
+	For $S_5$, we want all elements with order 2. It follows that since we can write any permutation as a product of disjoint cycles, and the order of such a product is the lcm of their orders, we need the elements whose disjoint cycles do not exceed length 2. In $S_5$, there are two ways to do this: either we have the form $(a_1\ a_2)$ or $(a_1\ a_2)(a_3\ a_4)$. The number of permutations of the first form plus the second form is
+	$$ {5 \choose 2} + \frac{1}{2!} {5 \choose 2} {3 \choose 2} = 25 . $$
+	We divide by 2! to account for the ordering of the two disjoint cycles, which does not change the permutation.
+	Similarly for $S_5$, we can have the following forms: $(a_1\ a_2)$, $(a_1\ a_2)(a_3\ a_4)$, or $(a_1\ a_2)(a_3\ a_4)(a_5\ a_6)$. The respective number of possible permutations is
+	$$ {6 \choose 2} + \frac{1}{2!} {6 \choose 2} {4 \choose 2} + \frac{1}{3!} {6 \choose 2} {4 \choose 2} {2 \choose 2} = 75 . $$
+	In general for $S_n$, we want to count the number of ways a product of 2-cycles can be written. If $n$ is even, the most 2-cycles we can have is $n/2$, so we have
+	$$ {n \choose 2} + \frac{1}{2!}{n \choose 2}{n-2 \choose 2} + \cdots + \frac{1}{(n/2)!}{n \choose 2}{n-2 \choose 2} \cdots {2 \choose 2} $$
+	and if $n$ is odd, the most 2-cycles we can have is $(n-1)/2$, giving
+	$$ {n \choose 2} + \frac{1}{2!}{n \choose 2}{n-2 \choose 2} + \cdots + \frac{1}{((n-1)/2)!}{n \choose 2}{n-2 \choose 2} \cdots {3 \choose 2} . $$
+	
+	$\newline$
+	\noindent{\textbf{40.}}
+	We know that $1 = y^m = y^{dt} = (y^t)^d$, so the order of $y^t$ divides $d$. Suppose there is some $e > 0$ such that $(y^t)^e = 1$ and $e<d$. Then we can see that $et < m = dt$, and $(y^t)^e = y^{et} = 1$, but this contradicts the statement that $y$ has order $m$. Therefore, $d$ must be the smallest number such that $(y^t)^d = 1$. Thus, $d$ is the order of $y^t$.
+	
+	$\newline$
+	\noindent{\textbf{41.}}
+	Let $x \in G$ such that $x^d = a$. Then $a^{dk} = (x^d)^{dk} = x^{d^2 k} = 1$. Suppose there exists an integer $e$ such that $e\leq d^2 k$ and the order of $x$ is $e$. Then $a^e = (x^d)^e = (x^e)^d = 1$, so $dk \mid e$. Then we can write $e = bdk$ for some integer $b$. So $1 = x^e = x^{bdk} = (x^d)^{bk} = a^{bk}$. This implies $dk \mid bk$, so $d \mid b$. Therefore, we can write $e$ differently again as $e=cd^2k$ for some integer $c$. But we know that $e\leq d^2 k$, so $c=1$ and $e=d^2k$.
+	
+	$\newline$
+	\noindent{\textbf{44.}}
+	Suppose we have $a$ and $b$ in $G$. Since $x^2 = xx = 1$ implies $x = x^{-1}$ for all $x \in G$, every element is its own inverse. Therefore, $ab = (ab)^{-1} = (b^{-1})(a^{-1}) = ba$. Thus $a$ and $b$ commute and $G$ is abelian.
+	
+	$\newline$
+	\noindent{\textbf{46.}}
+	Suppose we define a relation ``$\cong$" on $G$ such that for $a$ and $b$ in $G$, $a\cong b$ if $a = b$ or $a = b^{-1}$. This relation is reflexive since $a \cong a$. It is symmetric since $a \cong b$ means $a = b$ or $a = b^{-1}$, and $b \cong a$ means $b = a$ or $b = a^{-1}$, which are the same. It is transitive since $a \cong b$ means $a = b$ or $a = b^{-1}$, and $b \cong c$ means $b = c$ or $b = c^{-1}$, which implies $a = c$ or $a = c^{-1}$. Then $\cong$ is an equivalence relation and partitions $G$.
+	
+	Next, we observe that every equivalence class contains an element and its inverse, nothing more. Order 2 elements are their own inverses, and as such are the only members of their equivalence classes. Suppose the order of $G$ is $2n$. Let the number of classes with one element be $s$, and the number of classes with two elements be $t$. Then $2n = 2t + s$, so $s = 2n - 2t = 2(n-t)$. So $s$ is even. We know that $\{1\}$ is the unique class with one element that does not have order 2; it has order 1. Then, the number of classes with order 2 is $s-1$, an odd number.
+	
+	$\newline$
+	\noindent{\textbf{48.}}
+	Suppose we have two stochastic matrices
+	$$ \begin{bmatrix}
+	a & c \\
+	b & d
+	\end{bmatrix}, \
+	\begin{bmatrix}
+	e & f \\
+	g & h
+	\end{bmatrix} $$
+	such that $a+b=c+d=e+g=f+h=1$. Then their product is
+	$$ \begin{bmatrix}
+	ae+cg & af+ch \\
+	be+dg & bf+dh
+	\end{bmatrix} . $$
+	We can show that
+	$$(ae+cg) + (be+dg) = e(a+b) + g(c+d) = e+g = 1$$
+	and similarly
+	$$(af+ch) + (bf+dh) = f(a+b) + h(c+d) = f+h = 1 . $$
+	So, the stochastic matrices are closed under matrix multiplication.
+	
+	Next, we can show that 
+	$$ \begin{bmatrix}
+	a & c \\
+	b & d
+	\end{bmatrix}^{-1} = 
+	\frac{1}{ad-bc} \begin{bmatrix}
+	d & -c \\
+	-b & a
+	\end{bmatrix} . $$
+	
+	Adding the elements of the left column gives
+	$$ \frac{d-b}{ad-bc} . $$
+	Since $d=1-c$ we can write the denominator as $$a(1-c)-bc = a-ac-bc = a-c(a+b) = a-c .$$ 
+	We can see that since $$(a-c) - (d-b) = (a-c) + (b-d) = (a+b) - (c+d) = 1-1 = 0,$$ 
+	we know $a-c=d-b$ and therefore the left column of the inverse sums to 1. The right column sums to
+	$$ \frac{a-c}{ad-bc} . $$
+	As above, we can write the denominator as $a-c$, and it follows that the right column also sums to 1. Thus, the inverse of a stochastic matrix is stochastic.
+	
+	
+	
+	
+	
+	
+	
+\end{document}
