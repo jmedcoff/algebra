@@ -1,0 +1,106 @@
+\documentclass{amsart}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{a4paper}
+
+\title{Homework 3}
+\author{Jason Medcoff}
+\date{}
+
+% 2.71, 2.87
+
+\begin{document}
+	\maketitle
+	
+	\noindent{\textbf{55.}}
+	Take $G = \mathbb{Z}_6$, with subgroups $H = \{0, 2, 4\}$ and $K = \{0, 3\}$. Then $H \cup K$ is $\{0, 2, 3, 4\}$. This is not a subgroup since $2+3 = 5 \not \in H \cup K$.
+	
+	$\newline$
+	\noindent{\textbf{56.}}
+	From Lagrange, we know that 
+	$$ \frac{|G|}{|H|} = [G:H],\ \ \ \ \frac{|G|}{|K|} = [G:K],\ \ \ \ \frac{|K|}{|H|} = [K:H] . $$
+	Therefore
+	$$ [G:K][K:H] = \frac{|G|}{|K|} \frac{|K|}{|H|} = \frac{|G|}{|H|} = [G:H] . $$
+	
+	$\newline$
+	\noindent{\textbf{57.}}
+	We know $H \cap K$ is a subgroup of $H$, $K$, and $G$. From Lagrange's theorem, we know the order of $H \cap K$ divides $|H|$ and $|K|$. Since the order of $H$ and $K$ are coprime, $\gcd(|H|, |K|)=1$ so $|H \cap K| = 1$.
+	
+	$\newline$
+	\noindent{\textbf{59.}}
+	Suppose that $G$ is not cyclic. Then take $x \in G$, $x \neq 1$. Because $G$ is not cyclic, $|x| \neq 4$. But from Corollary 2.85, $|x|$ divides $|G|$. The order of $x$ is not 1, as it is not the identity, and not 4, so it must be 2. Exercise 44 was proven in homework 2, that if $x^2 = 1 \ \forall x \in G$, $G$ is abelian.
+	
+	If $G$ is cyclic, then it is necessarily abelian. Take $g$ to be the generator. Then for $a$, $b \in G$, say $a=g^s$ and $b=g^t$, then $$ ab = g^s g^t = g^{s+t} = g^{t+s} = g^t g^s = ba . $$
+	
+	$\newline$
+	\noindent{\textbf{63.}}
+	Take $H = \{(1),\ (1\ 2)\}$, and $\alpha = (1\ 3)$. Then the left coset $\alpha H$ is
+	$$ \{(1\ 3),\ (1\ 2\ 3)\} . $$
+	The right coset $H\alpha$ is found to be
+	$$ \{(1\ 3),\ (1\ 3\ 2)\} . $$
+	The left and right coset are not equal. It follows that $H$ is not normal in $S_3$.
+	
+	$\newline$
+	\noindent{\textbf{68.}}
+	Suppose $G$ is abelian. Then for $a$, $b \in G$:
+	$$ f(ab) = (ab)^{-1} = (ba)^{-1} = a^{-1}b^{-1} = f(a)f(b) $$
+	and $f$ is a homomorphism.
+	
+	Suppose $f$ is a homomorphism. Then for $a$, $b \in G$:
+	$$ ab = (b^{-1}a^{-1})^{-1} = (f(b)f(a))^{-1} = (f(ba))^{-1} = ba$$
+	and $G$ is abelian.
+	
+	$\newline$
+	\noindent{\textbf{69.}}
+	Take $a \in G$ with order $n$ and $f(a) \in H$ with order $m$. If $n$ is finite, then 
+	$$f(a)^n = f(a^n) = f(1_G) = 1_H . $$
+	Then we know $m \mid n$ and thus $m$ is finite. Since $f$ is bijective, we can try
+	$$f^{-1}(f(a))^m = f^{-1}(f(a)^m) = f^{-1}(1_H) = 1_G . $$
+	Thus $n \mid m$ and therefore $n = m$.
+	
+	For the second part, let $a_1, \dots, a_t$ be all the elements in $G$ with order $k$. Then by the first part of this exercise, we know $f(a_1), \dots, f(a_t)$ are elements in $H$ of order $k$. Suppose there is some additional $b \in H \setminus \{f(a_1), \dots, f(a_t)\}$ with order $k$. Then there must exist a $c \in G \setminus \{a_1, \dots, a_t\}$ with order $k$ such that $f(c) = b$, since $f$ is a bijection. A contradiction. Therefore $G$ and $H$ have the same number of elements of order $k$.
+	
+	$\newline$
+	\noindent{\textbf{71.}}
+	Note that the dihedral group of order 4 contains, geometrically, a horizontal reflection, a vertical reflection, a rotation by 180 degrees, and the identity. Consider the mapping $f: V \rightarrow D_4$
+	$$ f = \{ ((1,\ 1),\ 1),\ ((-1,\ 1),\ \text{h-flip}),\ ((1,\ -1),\ \text{v-flip}),\ ((-1,\ -1),\ \text{rotate})\} $$
+	where the second element of each pair corresponds to the geometric descriptions above. So $f$ corresponds to transformations on the orientation of a 2-gon; the parity of each element in a pair from $V$ corresponds to the horizontal and vertical orientation of the 2-gon.
+	
+	For the second part, we know that the dihedral group of order 6 is the symmetry group of an equilateral triangle. The group $S_3$ is the set of permutations on three symbols; if vertices are ``symbols", then $S_3$ permutes the vertices of an equilateral triangle, giving the dihedral group.
+	
+	$\newline$
+	\noindent{\textbf{80.}}
+	Let $H_1, H_2, \dots$ be a family of normal subgroups, and denote their intersection by $\bigcap H$. Then take $x \in \bigcap H$. For some $g \in G$, we know that $gxg^{-1} \in H_i$ since each $H_i$ is normal. Then $gxg^{-1} \in \bigcap H$. Therefore, $\bigcap H$ is normal.
+	
+	$\newline$
+	\noindent{\textbf{82.}}
+	Lemma: Suppose $A$ is a finite set, and $f: A \rightarrow A$ is a function. If $f$ is injective, it is surjective.
+	\textit{Proof. } Suppose $f$ is injective. Then the image of $f$ has at least $|A|$ elements, but the image of $f$ is contained in $A$, so it must have exactly $|A|$ elements. Therefore $f$ is surjective.	
+	
+	$\newline$
+	Suppose $x$, $y \in G$, $|G| = 2k-1$, and $x^2 = y^2$. Then
+	$$ x = x^{2k} = (x^2)^k = (y^2)^k = y^{2k} = y $$
+	so squaring is injective. Thus by the lemma, squaring is bijective, so every element has an inverse of squaring, or a square root.
+	
+	If every element in $G$ has a square root, we can take $x_1, x_2$ such that $x_1 \neq x_2$. Then suppose there is some $y$ that is the square root of $x_1$ and $x_2$. Then $y^2 = x_1 = x_2$, a contradiction. Therefore every element has a unique square root.
+	
+	$\newline$
+	\noindent{\textbf{87.}}
+	We know that the dihedral group is generated by a reflection element of order 2, and a rotation element of order 4. Suppose these are $a$ and $b$, respectively, such that $a^2 = 1$ and $b^4 = 1$. Then the dihedral group contains at least two elements of order two: $b^2$ and $a$. The only element of order two of the quaternion group is $-1$. Therefore, the groups cannot be isomorphic as they contain differing amounts of elements of order two.
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+\end{document}
