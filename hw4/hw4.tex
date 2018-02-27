@@ -1,0 +1,95 @@
+\documentclass{amsart}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{a4paper}
+
+\title{Homework 4}
+\author{Jason Medcoff}
+\date{}
+
+%   15, 19, 20, 22, 23, 24
+
+\begin{document}
+	\maketitle
+	
+	\noindent{\textbf{3.}}
+	i) If $a+c = b+c$, take $c'$ such that $c' + c = 0$. Then
+	\begin{equation*}
+	\begin{split}
+	a+c &= b+c \\
+	(a+c)+c' &= (b+c)+c' \\
+	a+(c+c') &= b+(c+c') \\
+	a+(c'+c) &= b+(c'+c) \\
+	a+0 &= b+0 \\
+	a &= b .
+	\end{split}
+	\end{equation*}
+	
+	ii) If $a+b=0$ and $a+c=0$, then
+	$$ b = b+0 = b+(a+c) = (b+a)+c = 0+c = c . $$
+	
+	iii) Finally, if $u$ is a unit in $R$, such that $ub=1$ and $uc=1$, then we have
+	$$ b = 1b = (uc)b = (ub)c = 1c = c . $$
+	
+	$\newline$
+	\noindent{\textbf{6.}}
+	We know $\mathbb{I}_{11} = \{0, 1, \dots, 9, 10\}$ and since 11 is prime, every nonzero element has a multiplicative inverse. Given $a$, we are looking for $x$ such that $ax \equiv 1 \mod 11$, and the extended euclidean algorithm gives $x$ and $y$ such that $ax+by=1$. If we let $b=11$, then $by \equiv 0 \mod 11$, and so $ax \equiv 1 \mod 11$. Then $x$ is the multiplicative inverse of $a$.
+	
+	\begin{table}[h]
+		\centering
+		\caption{Multiplicative inverses mod 11}
+		\label{my-label}
+		\begin{tabular}{lllllllllll}
+			$a$                        & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+			$a^{-1}$                   & 1 & 6 & 4 & 3 & 9 & 2 & 8 & 7 & 5 & 10
+		\end{tabular}
+	\end{table}
+	
+	$\newline$
+	\noindent{\textbf{7.}}
+	i) We know that the boolean group is abelian from page 130. So the boolean ring under its addition satisfies the first four axioms of commutative rings automatically. The rest of the axioms follow:
+	$$ UV = U \cap V = V \cap U = VU $$
+	$$ U(VW) = U \cap (V \cap W) = (U \cap V) \cap W = (UV)W $$
+	$$ UX = U \cap X = U, \ \ \text{since} \ U \subseteq X $$
+	\begin{equation*}
+	\begin{split}
+	U(V+W) = U \cap ((V-W)\cup(W-V)) &= (U \cap (V-W)) \cup (U \cap (W-V)) \\
+	&= [(U-V) \cap (U-W)] \cup [(U-W) \cap (U-V)] \\
+	&= (U \cap V) + (U \cap W) \\
+	&= UV + UW
+	\end{split}
+	\end{equation*}
+	
+	ii) In the boolean ring, we showed above that ``1" is the set $X$ itself. Thus $X$ is automatically a unit. Now we want to show there are no other units. Suppose we have some $U$, $V \in \mathcal{B}(X)$ such that $UV = 1$, that is, $U \cap V = X$. Then $U$ and $V$ must be supersets of $X$, but they are subsets of $X$ since they belong to $\mathcal{B}(X)$. Thus $U$ and $V$ are $X$ itself, so $X$ is the sole unit.
+	
+	iii) We know from above that for any $\mathcal{B}(X)$, the multiplicative identity is $X$. Thus, for distinct $X$ and $Y$, $\mathcal{B}(X)$ and $\mathcal{B}(Y)$ have different multiplicative identities and thus $\mathcal{B}(Y)$ is not a subring of $\mathcal{B}(X)$.
+	
+	$\newline$
+	\noindent{\textbf{8.}}
+	i) If $a^2 = a$, then $a^2 - a = 0$. We can factor $a(a-1) = 0$, and it must be that either $a=0$ or $a-1=0$. Thus, $a=0$ or $a=1$.
+	
+	ii) Take $f$ to be the unit step function, giving zero for negative input and one for nonnegative input. Then $f$ is clearly not 0 or 1, but for all $x<0$, $f(x)f(x) = 0(0) = 0 = f(x)$, and for all $x \geq 0$, $f(x)f(x) = 1(1) = 1 = f(x)$.
+	
+	$\newline$
+	\noindent{\textbf{15.}}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+\end{document}
