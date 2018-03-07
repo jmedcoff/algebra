@@ -8,7 +8,7 @@
 \author{Jason Medcoff}
 \date{}
 
-%   15, 19, 20, 22, 23, 24
+%   19
 
 \begin{document}
 	\maketitle
@@ -73,21 +73,135 @@
 	
 	$\newline$
 	\noindent{\textbf{15.}}
+	It is clear that $R$ is a subset of $\mathbb{R}$, so we will begin by showing that $R$ is a subring of $\mathbb{R}$. First, we note that $R$ is nonempty; namely, it contains $0 = 0+0\sqrt{2}$. In addition, it is closed under subtraction:
+	$$ (a+b\sqrt{2}) - (c+d\sqrt{2}) = (a-c) + (b-d)\sqrt{2} \in R . $$
+	Finally, it is closed under multiplication:
+	$$ (a+b\sqrt{2})(c+d\sqrt{2}) = ac + (bc + ad)\sqrt{2} + 2bd = (2bd + ac) + (bc + ad)\sqrt{2} \in R . $$
+	Thus $R$ is a subring of $\mathbb{R}$. It can also be shown that since $\mathbb{R}$ is a domain, $R$ is a domain. Consider some domain $X$ and a subring $Y$ of $X$. Suppose that $Y$ is not a domain, meaning there exists $a$, $b \in Y$ such that neither equals zero, and $ab = 0$. But $a$ and $b$ are necessarily in $X$, and $X$ is a domain, so $ab \neq 0$, a contradiction. Therefore a subring of a domain is also a domain, and therefore $R$ is a domain.
+	
+	$\newline$
+	\noindent{\textbf{19.}}
+	i) Matrix addition is abelian in the general case, so it holds here as well.
+	
+	ii) Matrix addition is commutative in general, and so holds here again.
+	
+	iii) The zero matrix satisfies the additive identity:
+	$$\begin{bmatrix}
+	0 & 0 \\
+	0 & 0
+	\end{bmatrix} + \begin{bmatrix}
+	a & b \\
+	b & a+b
+	\end{bmatrix} =
+	\begin{bmatrix}
+	0+a & 0+b \\
+	0+b & 0+a+b
+	\end{bmatrix} = \begin{bmatrix}
+	a & b \\
+	b & a+b
+	\end{bmatrix}.$$
+	
+	iv) Take $A = \begin{bmatrix}
+	a & b \\
+	b & a+b
+	\end{bmatrix}$, $a,\ b \neq 0$; then the additive inverse $-A$ is $\begin{bmatrix}
+	-a & -b \\
+	-b & -a-b
+	\end{bmatrix}$ and is in $\mathbb{F}_4$ since $-a$ and $-b$ are in $\mathbb{F}_2$ as 2 is prime.
+	
+	v) Matrix multiplication is associative in general, and associativity is inherited here.
+	
+	vi) The identity matrix $I_2 = \begin{bmatrix}
+	1 & 0 \\
+	0 & 1
+	\end{bmatrix}$ is in $\mathbb{F}_4$, since 1 and 0 are in $\mathbb{F}_2$. Then $$\begin{bmatrix}
+	1 & 0 \\
+	0 & 1
+	\end{bmatrix} \begin{bmatrix}
+	a & b \\
+	b & a+b
+	\end{bmatrix} =
+	\begin{bmatrix}
+	1a+0b & 1b+0(a+b) \\
+	0a+1b & 0b+1(a+b)
+	\end{bmatrix} =\begin{bmatrix}
+	a & b \\
+	b & a+b
+	\end{bmatrix}.$$
+	
+	vii) Matrix multiplication is not commutative in general, so we look more closely here. Take $A = \begin{bmatrix}
+	a & b \\
+	b & a+b
+	\end{bmatrix}$ and $B = \begin{bmatrix}
+	c & d \\
+	d & c+d
+	\end{bmatrix}.$
+	Then $AB = \begin{bmatrix}
+	ac+bd & ad +bc +bd \\
+	bc+da+db & 2bd+ac+bc+ad
+	\end{bmatrix} = \begin{bmatrix}
+	ca+db & cb+da+db \\
+	da+cb+db & 2db+ca+da+cb
+	\end{bmatrix} = BA$.
+	
+	viii) Matrix multiplication is distributive over matrix addition in general and is inherited here.
+	
+	To show this is a field with four elements, observe that there are two choices 0 or 1 for each of two variables $a$ and $b$; thus there are four possible assignments of 0 and 1 to $a$ and $b$. To show inverses for nonzero elements, we know already that a matrix is invertible if its determinant is nonzero. Taking $$\begin{vmatrix}
+		a & b \\
+		b & a+b
+	\end{vmatrix} = a(a+b) - b^2 = a^2 + ab - b^2$$
+	we can see that the determinant is nonzero as long as one of $a$ or $b$ is nonzero. Thus, each element except for the zero matrix is invertible.
 	
 	
+	$\newline$
+	\noindent{\textbf{20.}}
+	% prove every finite domain is a field
+	Take some $a \in R$ such that $a \neq 0$. Then define a map $f: R \rightarrow R$ that sends $x \mapsto ax$. Consider the kernel of $f$,
+	$$ \ker f = \{ x \in R : f(x) = 0\} = \{ x \in R : ax = 0\} $$
+	Then since $R$ is a domain and $a \neq 0$, it must be that $x = 0$. Then the kernel is $\{0\}$ and $f$ is injective. Then the image of $f$ has at least $|R|$ elements, but the image of $f$ is contained in $R$, so it must have exactly $|R|$ elements. Therefore $f$ is surjective.
 	
+	Since $f$ is surjective and $1 \in R$, there must exist an $x$ such that $f(x) = 1$, or $ax = 1$. Then $x$ is the multiplicative inverse of $a$. Since $a$ was arbitrary but nonzero, every nonzero element of $R$ has a multiplicative inverse, and $R$ is thus a field.
 	
+	$\newline$
+	\noindent{\textbf{22.}}
+	% don't assume F is already a ring
+	We already know from an above problem that since $F$ is a subset of $\mathbb{R}$, if $F$ is a subring, it is a domain. Then we need only show that every element has a multiplicative inverse. First, $F$ is indeed a subring since
+	$$ 0 = 0+0\sqrt{2} \in F ,$$
+	$$ (a+b\sqrt{2}) - (c+d\sqrt{2}) = (a-c) + (b-d)\sqrt{2} \in F , $$
+	$$ (a+b\sqrt{2})(c+d\sqrt{2}) = ac + (bc + ad)\sqrt{2} + 2bd = (2bd + ac) + (bc + ad)\sqrt{2} \in F . $$
+	Then $F$ is also a domain. From prior experience, it is expected that the inverse of $a+b\sqrt{2}$ will be $\frac{1}{a+b\sqrt{2}}$. So we have
+	$$ \frac{1}{a+b\sqrt{2}} \bigg( \frac{a-b\sqrt{2}}{a-b\sqrt{2}} \bigg) 
+	= \frac{a-b\sqrt{2}}{a^2 - 2b^2} = \bigg(\frac{a}{a^2 - 2b^2}\bigg) - \bigg( \frac{b}{a^2 - 2b^2}\bigg) \sqrt{2} \in F $$
+	since $\frac{a}{a^2 - 2b^2}$ and $\frac{b}{a^2 - 2b^2}$ are in $\mathbb{Q}$.
+	Therefore, $F$ is a field.
 	
+	$\newline$
+	\noindent{\textbf{23.}}
+	i) As above,
+	$$ 0 = 0+0i \in F, $$
+	$$ (a+bi) - (c+di) = (a-c) + (b-d)i \in F , $$
+	$$ (a+bi)(c+di) = ac + (bc + ad)i - bd = (ac - bd) + (bc + ad)i \in F . $$
+	Now, we want to find inverses:
+	$$ \frac{1}{a+bi} = \frac{a}{a^2 + b^2} - \frac{b}{a^2 + b^2} i \in F . $$
 	
+	ii) Take $u \in F$. Write $u = a+bi$. Then we want to show that $u = \alpha \beta^{-1}$ for some $\alpha$, $\beta \in F$. Write $\alpha = c+di$ and $\beta^{-1} = e+fi$.
+	$$ a+bi = (c+di)(e+fi) = (ce-df) + (de + cf)i $$
+	So $a = (ce-df)$ and $b = (de+cf)$.
+	Part i) already shows how to go from $\beta$ to $\beta^{-1}$ and vice versa.
 	
+	$\newline$
+	\noindent{\textbf{24.}}
+	i) Reflexive: $a\equiv b \implies b = ua \implies a = u^{-1}b \implies b\equiv a$ since the inverse of a unit is a unit.
 	
+	Transitive: $a\equiv b,\ b\equiv c \implies b = ua,\ c = vb \implies c = uva \implies a \equiv c$ since the product of two units is a unit. %TODO ref this
 	
+	Symmetric: $a \equiv a \implies a = ua \implies u = 1$, trivially true as the multiplicative identity 1 is always a unit.
 	
+	So $\equiv$ is an equivalence relation.
 	
+	ii) $a \equiv b \implies b = ua$ for some unit $u$. Thus $b$ is a multiple of $a$. It follows that any multiple of $b$ is also a multiple of $a$. But since $a = u^{-1}b$, $a$ is a multiple of $b$, as are all multiples of $a$. Therefore, the sets of multiples of $a$ and $b$ are the same, or $(a) = (b)$.
 	
-	
-	
-	
+	Conversely, say that $(a) = (b)$ in some domain $R$. Then we know that $ka=b$ and $\ell b=a$. Then it must be that $k \ell b = b$, so $k$ and $\ell$ must be multiplicative inverses. Therefore, $k$ and $\ell$ are units. Then we know that $b=ua$ for some unit $u$, and thus $a \equiv b$.
 	
 	
 	
