@@ -1,0 +1,120 @@
+\documentclass{amsart}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{a4paper}
+
+\title{Homework 5}
+\author{Jason Medcoff}
+\date{}
+
+% 30, 31, 32, 33
+
+\begin{document}
+	\maketitle
+	
+	\noindent{\textbf{97iii.}}
+	We want to show that if $f: (H\times K) \rightarrow H$ is an homomorphism, $K^*$ is the kernel of $f$ and therefore a normal subgroup of $(H\times K)$ by the first isomorphism theorem. In addition, we must show that the image of $f$ is $H$; then it follows from the first isomorphism theorem that $(H\times K) / K^*$ is isomorphic to $H$. Namely, we take $f$ that maps $(h, k) \mapsto h$ for $h \in H$ and $k \in K$.
+	
+	First, $f$ is a homomorphism since
+	$$ f((h_1, k_1)(h_2, k_2)) = f(h_1 h_2, k_1 k_2) = h_1 h_2 = f(h_1, k_1) f(h_2, k_2) . $$
+	
+	We know that we can write
+	\begin{equation*}
+	\begin{split}
+	\ker f &= \{(h, k) \in (H\times K) : f(h, k) = 1_H \} \\
+	&= \{(1_H, k) \in (H\times K)\} \\
+	&= K^*
+	\end{split}
+	\end{equation*}
+	and therefore $K*$ is a normal subgroup of $(H\times K)$. Next, we want to show that the image of $f$ is the entirety of $H$. In particular,
+	\begin{equation*}
+	\begin{split}
+	\text{im}\ f &= \{h \in H : \exists (h, k) \in (H\times K), f(h, k) = h \} \\
+	&= \{h \in H\} \\
+	&= H
+	\end{split}
+	\end{equation*}
+	since the first element in $(h, k)$ can be chosen from $H$ arbitrarily. Thus, $H$ is the image of $f$, and so is isomorphic to the quotient group $(H\times K) / K^*$.
+	
+	$\newline$
+	\noindent{\textbf{98.}}
+	Suppose $G/Z(G)$ is cyclic with generator $g$. Then the cosets of $Z(G)$ are of the form $g^i Z(G)$. Since these cosets partition $G$, every element of $G$ belongs to one coset. Take $a = g^i z_1$ and $b = g^j z_2$ for some $z_1$, $z_2 \in Z(G)$. Then we can write
+	$$ ab = g^i z_1 g^j z_2 = g^i g^j z_1 z_2 = g^{i+j} z_1 z_2 = g^{j+i} z_2 z_1 = g^j g^i z_2 z_1 = g^j z_2 g^i z_1 = ba $$
+	since $z_1$ and $z_2$ belong to the center and thus commute with every element in $G$. Thus $G$ is abelian. The conclusion is exactly the contrapositive of this.
+	
+	$\newline$
+	\noindent{\textbf{99.}} % |G| = |G/H||H|
+	Since every element in $G$ appears in one coset of $H$, it follows from Lagrange's theorem that
+	$$ |G| = |G/H| |H| . $$
+	Write $|G/H| = p^x$ and $|H| = p^y$. Then
+	$$ |G| = |G/H| |H| = p^x p^y = p^{x+y} $$
+	and so the order of $G$ is a power of $p$.
+	
+	$\newline$
+	\noindent{\textbf{105.}}
+	Let $H$ be any other subgroup of $G$ with order $|K|$. Define $f: G \rightarrow G/K$. Then $f(H)$ is a quotient group of $H$ and thus $|f(H)|$ divides $|H| = |K|$. By the first isomorphism theorem, $f(H)$ is a subgroup of $G/K$ so $|f(H)|$ also divides $[G:K]$. Then it must be that $|f(H)| = 1$. Then $H \subseteq K$, but since they have the same cardinality, $H=K$.
+	
+	$\newline$
+	\noindent{\textbf{106.}}
+	First, suppose $HK$ is a subgroup of $G$, with $h \in H$ and $g \in G$. Then $h = h1 \in HK$ and $k = 1k \in HK$, therefore $kh \in HK$. So $KH \subseteq HK$. We must also have $(hk)^{-1} \in HK$, so it must follow that $(hk)^{-1} = h' k'$ for $h' \in H$, $k' \in K$. Then $hk = (h' k')^{-1} = k'^{-1} h'^{-1} \in KH$ since $k'^{-1} \in K$, $h'^{-1} \in H$. Thus $HK \subseteq KH$, so if $HK$ is a subgroup in $G$, $HK = KH$.
+	
+	Conversely, suppose that $HK = KH$. Then let $a$, $b \in HK$. Then $a = h_a k_a $ and $b=h_b k_b$ for $h_a$, $h_b \in H$ and $k_a$, $k_b \in K$. Then $k_a h_b \in KH = HK$, so $k_a h_b = hk$ for some $h \in H$ and $k \in K$. Therefore
+	$$ ab = h_a k_a h_b k_b = h_a h k k_b \in HK $$
+	as $h_a h \in H$ and $k k_b \in K$. Then
+	$$ a^{-1} = (h_a k_a)^{-1} = k_a^{-1} h_a^{-1} \in KH = HK $$
+	so $HK$ is closed under multiplication and inverses. Thus, $HK$ is a subgroup of $G$.
+	
+	$\newline$
+	\noindent{\textbf{113.}}
+	i) Suppose $x$, $y \in G$. Then their commutator is $xyx^{-1}y^{-1}$. Take $g \in G$, then
+	$$ g(xyx^{-1}y^{-1})g^{-1} = gxg^{-1} gyg^{-1} gx^{-1}g^{-1} gy^{-1}g^{-1} = (gxg^{-1})(gyg^{-1})(gxg^{-1})^{-1}(gyg^{-1})^{-1} $$
+	and thus the conjugate of the commutator of $x$ and $y$ is the commutator of $gxg^{-1}$ and $gyg^{-1}$. Then for $x_i$ and $y_i$ in $G$ for $1\leq i \leq n$ we have
+	$$ g \bigg( \prod_{1}^{n} x_i y_i x^{-1}_i y^{-1}_i \bigg) g^{-1} = g(x_1 y_1 x^{-1}_1y^{-1}_1) \bigg( \prod_{2}^{n} x_i y_i x^{-1}_i y^{-1}_i \bigg) g^{-1} = \dots = \prod_{1}^{n} gx_i y_i x^{-1}_i y^{-1}_i g^{-1} $$
+	and since the conjugate of a commutator is a commutator, and the conjugate of a product of commutators is a product of commutators, and is therefore in $G'$. So $G'$ is normal in $G$.
+	
+	ii) Let $aG'$ and $bG' \in G/G'$. Then $aG' bG' = (ab)G' = ba(a^{-1}b^{-1}ab)G' = (ba)G'$ since the commutator is in $G'$. Thus $G/G'$ is abelian.
+	
+	iii) We want to show that every commutator maps to the identity.
+	$$ \varphi(xyx^{-1}y^{-1}) = \varphi(x)\varphi(y)\varphi(x)^{-1}\varphi(y)^{-1} $$
+	and since these elements commute and cancel to the identity, $G' \leq \ker \varphi$.
+%Since $\varphi$ is a homomorphism, the first isomorphism tells us that $G/\ker \varphi \cong \text{im}\ \varphi$, and since $\text{im}\ \varphi \subseteq A$ is abelian, $G/\ker \varphi$ must be abelian. Thus,
+%	$$ (g \ker \varphi)(h \ker \varphi)(g \ker \varphi)^{-1}(h \ker \varphi)^{-1} = \ker \varphi .$$
+%	Conversely,
+%	$$ (g \ker \varphi)(h \ker \varphi)(g \ker \varphi)^{-1}(h \ker \varphi)^{-1} = (ghg^{-1}h^{-1})\ker \varphi $$
+%	so $ghg^{-1}h^{-1} \in \ker \varphi$ and therefore $G' \leq \ker \varphi$.
+	
+	iv) Since $G/G'$ is abelian, every subgroup of it is normal. Subgroups of $G/G'$ correspond to subgroups of $G$ that contain $G'$, and normal subgroups of $G/G'$ correspond to normal subgroups of $G$ containing $G'$. Thus, any subgroup containing $G'$ is also normal.
+	
+	$\newline$
+	\noindent{\textbf{30.}}
+	Take $x \in R[x]$. If it had an inverse, say $f(x)$, then $xf(x) = 1$. But then if $f(x)$ is of degree $n$, $1 = xf(x)$ has degree $n+1$. But $\deg(xf(x)) = \deg(1) = 0$, a contradiction. So $x$ does not have an inverse, and therefore $R[x]$ is not a field.
+	
+	$\newline$
+	\noindent{\textbf{31.}}
+	
+	
+	$\newline$
+	\noindent{\textbf{32.}}
+	i) If $R$ is a domain, so is $R[x]$. Then the degree of a product of two polynomials is the sum of the degree of each. Thus, $f(x)$ can only be a unit if its degree is zero, and its inverse is thus of degree zero. But an invertible constant is a unit in $R$.
+	
+	ii) $(2x+1)(2x+1) = 4x^2 + 4x + 1$. Modulo 4, the first two terms are zero, so this is always 1.
+	
+	$\newline$
+	\noindent{\textbf{33.}}
+	We know from Fermat's little theorem that for prime $p$ and any $x$,
+	$$ x^p \equiv x \mod p . $$
+	In other words,
+	$$ x^p - x \equiv 0 \mod p $$
+	for all $x$, so letting $f(x) = x^p - x$, we have that $f^b$ will always evaluate to zero.
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+\end{document}
