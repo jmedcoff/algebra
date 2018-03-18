@@ -1,0 +1,223 @@
+\documentclass{amsart}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{geometry}
+\geometry{a4paper}
+
+\title{Homework 6}
+\author{Jason Medcoff}
+\date{}
+
+% 58, 59, 60, 61, 64, 66
+
+\begin{document}
+	\maketitle
+	
+	\noindent{\textbf{44.}}
+	i) The inverse of a bijection is a bijection, so we need only show $\psi$ is an isomorphism. Since $\varphi(a)\varphi(b) = \varphi(ab)$ and $\varphi(a^{-1}) = \varphi(a)^{-1}$,
+	$$ \psi(\varphi(a) \varphi(b)) = \psi(\varphi(ab)) = ab = \psi(\varphi(a)) \psi(\varphi(b)) . $$
+	
+	ii) The compositions of bijections is a bijection. Let $f: R \to S$ and $g: S \to T$, with $a$, $b \in R$. Then
+	$$ (g \circ f) (ab) = g(f(ab)) = g(f(a)f(b)) = g(f(a))g(f(b)) = (g \circ f) (a) (g \circ f) (b). $$
+	
+	iii) Say $A$, $R$, $B$ belong to some set of commutative rings $S$. Then
+	\begin{itemize}
+		\item $A \cong R \implies R \cong A$ by (i) above,
+		\item $A \cong A$ by the identity map $f: A \to A$, $a \mapsto a$ being an isomorphism,
+		\item $A \cong R$, $R \cong B \implies A \cong B$ by (ii) above.
+	\end{itemize}
+	So isomorphism gives an equivalence relation on $S$.
+	
+	$\newline$
+	\noindent{\textbf{46.}}
+	$\eta(1) = 1$; that is, the constant polynomial $1$ is taken to $1$ in the ring $R$. In addition, for $f = \sum_i a_i x^i$, $g = \sum_j b_j x^j \in R[x]$,
+	$$ \eta(f + g) = \eta(\sum_k (a_k + b_k) x^k) = a_0 + b_0 = \eta(f) + \eta(g) $$
+	and
+	$$ \eta(fg) = \eta(\sum_i \Big( \sum_{j=0}^i a_j b_{i-j}\Big) x^i) = a_0 b_0 = \eta(f) \eta(g) . $$
+	The kernel 
+	$$\ker \eta = \{f \in R[x] : \eta(f) = 0 \} = \{f \in R[x] : a_0 = 0\}$$
+	is the ideal of polynomials over $R$ with a zero constant term. Thus the kernel can be described as those polynomials which have 0 as a root.
+	
+	$\newline$
+	\noindent{\textbf{47.}}
+	We can write
+	$$ \psi^{-1}(J) = \{r \in R : \psi(r) = j \in J \} . $$
+	We know this contains zero since $\{0\} \subseteq J$ and
+	$$ \psi^{-1}(\{0\}) = \ker \psi \subseteq \psi^{-1}(J) . $$
+	Then let $a$, $b \in \psi^{-1}(J)$ with $a = \psi(x)$ and $b = \psi(y)$. Then
+	$$ a-b = \psi(x) + \psi(y) = \psi(x-y) $$
+	and $x-y \in J$ so $\psi(x-y) \in \psi^{-1}(J)$. Similarly, for $r \in R$,
+	$$ \psi(ra) = \psi(r) \psi(a) $$
+	and since $\psi(a) \in J$ and $J \in S$, $\psi(r)\psi(a) \in J$. So $\psi^{-1}(J)$ is an ideal in $R$.
+	
+	$\newline$
+	\noindent{\textbf{49.}}
+	Let $f: R \to $ Frac$(R)$, with $r \mapsto \frac{r}{1}$. This map is a homomorphism since for $r=1$ we have $\frac{1}{1}$, and $$f(r+s) = \frac{r+s}{1} = \frac{r}{1} + \frac{s}{1} = f(r) + f(s) $$
+	and furthermore
+	$$ f(rs) = \frac{rs}{1} = \Big(\frac{r}{1}\Big) \Big(\frac{s}{1}\Big) = f(r)f(s) . $$
+	
+	We can demonstrate that $f$ is bijective by observing $g: $ Frac$(R) \to R$, $\frac{a}{b} \mapsto ab^{-1}$. Then
+	$$ (g \circ f)(r+s) = g(f(r+s)) = g(\frac{r}{1} + \frac{s}{1}) = g(\frac{r}{1}) + g(\frac{s}{1}) = r + s $$
+	and
+	$$ (g \circ f)(rs) = g(f(rs)) = g(\frac{r}{1} \frac{s}{1}) = g(\frac{r}{1})  g(\frac{s}{1}) = rs . $$
+	So $g$ is the inverse of $f$ and $f$ is an isomorphism.
+	
+	$\newline$
+	\noindent{\textbf{55.}}
+	\begin{itemize}
+		\item Associativity of matrix addition: inherited.
+		\item Commutativity of matrix addition: inherited.
+		\item Additive identity: zero matrix.
+		$$ \begin{bmatrix}
+		0 & 0 \\
+		0 & 0
+		\end{bmatrix} +
+		\begin{bmatrix}
+		a & b \\
+		-b & a
+		\end{bmatrix} = \begin{bmatrix}
+		0+a & 0+b \\
+		0-b & 0+a
+		\end{bmatrix} = \begin{bmatrix}
+		a & b \\
+		-b & a
+		\end{bmatrix}$$
+		\item Additive inverse:
+		$$ \begin{bmatrix}
+		-a & -b \\
+		b & -a
+		\end{bmatrix} +
+		\begin{bmatrix}
+		a & b \\
+		-b & a
+		\end{bmatrix} = \begin{bmatrix}
+		0 & 0 \\
+		0 & 0
+		\end{bmatrix} $$
+		\item Associativity of matrix multiplication: inherited.
+		\item Commutativity of matrix multiplication:
+		$$ \begin{bmatrix}
+		c & d \\
+		-d & c
+		\end{bmatrix} 
+		\begin{bmatrix}
+		a & b \\
+		-b & a
+		\end{bmatrix} = \begin{bmatrix}
+		ca-db & cb+da \\
+		-da-cb & -db+ca
+		\end{bmatrix} = \begin{bmatrix}
+		ac-bd & ad+bc \\
+		-bc-ad & -bd+ac
+		\end{bmatrix} = 
+		\begin{bmatrix}
+		a & b \\
+		-b & a
+		\end{bmatrix} \begin{bmatrix}
+		c & d \\
+		-d & c
+		\end{bmatrix}  $$
+		\item Multiplicative identity: $2\times 2$ identity matrix.
+		$$ \begin{bmatrix}
+		1 & 0 \\
+		0 & 1
+		\end{bmatrix} \in F $$ since $0 = -0$.
+		\item Distributive law: inherited.
+		\item Nonzero elements have inverses:
+		Consider $A = \begin{bmatrix}
+		a & b \\
+		-b & a
+		\end{bmatrix}$. We know $A^{-1}$ exists since $\det A = a^2 + b^2 \neq 0$ as long as $a \neq 0$ and $b \neq 0$. Then $$A^{-1} = \frac{1}{a^2 + b^2}\begin{bmatrix}
+		a & -b \\
+		b & a
+		\end{bmatrix} = \begin{bmatrix}
+		\frac{a}{a^2 + b^2} & -\frac{b}{a^2 + b^2} \\
+		\frac{b}{a^2 + b^2} & \frac{a}{a^2 + b^2} 
+		\end{bmatrix} \in F $$ since each entry in $A^{-1}$ is in $\mathbb{R}$.
+	\end{itemize}
+
+	To show $F$ is isomorphic to $\mathbb{C}$, we construct the obvious map $f: F \to \mathbb{C}$, $\begin{bmatrix}
+	a & b \\
+	-b & a
+	\end{bmatrix} \mapsto a+bi$. We can see that the identity matrix maps to $1 + 0i = 1$, and furthermore
+	$$f(\begin{bmatrix}
+	a & b \\
+	-b & a
+	\end{bmatrix}) + f(
+	\begin{bmatrix}
+	c & d \\
+	-d & c
+	\end{bmatrix}) = a+bi + c+di = (a+c) + (b+d)i = f(\begin{bmatrix}
+	a+c & b+d \\
+	-b-d & a+c
+	\end{bmatrix}) = f(\begin{bmatrix}
+	a & b \\
+	-b & a
+	\end{bmatrix} +
+	\begin{bmatrix}
+	c & d \\
+	-d & c
+	\end{bmatrix}) $$
+	and
+	$$f(\begin{bmatrix}
+	c & d \\
+	-d & c
+	\end{bmatrix}) f(
+	\begin{bmatrix}
+	a & b \\
+	-b & a
+	\end{bmatrix}) = (c+di)(a+bi) = ca-db + (da+cb)i = f(\begin{bmatrix}
+	ca-db & cb+da \\
+	-da-cb & -db+ca
+	\end{bmatrix}) = f(\begin{bmatrix}
+		c & d \\
+		-d & c
+	\end{bmatrix} 
+	\begin{bmatrix}
+		a & b \\
+		-b & a
+	\end{bmatrix})$$
+	so $f$ is a homomorphism. To show $f$ is injective, choose $a+bi = c+di$. Then 
+	$a+bi = f(\begin{bmatrix}
+	a & b \\
+	-b & a
+	\end{bmatrix})$ and $c+di = f(\begin{bmatrix}
+	c & d \\
+	-d & c
+	\end{bmatrix})$ but since $a=c$ and $b=d$, the matrices are equal. To show $f$ is surjective, take $z=a+bi$. Then there does exist $A =\begin{bmatrix}
+	a & b \\
+	-b & a
+	\end{bmatrix}$ such that $f(A) = z$. Thus $f$ is bijective and a homomorphism, so $F$ and $\mathbb{C}$ are isomorphic.
+	
+	$\newline$
+	\noindent{\textbf{58.}}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+\end{document}
