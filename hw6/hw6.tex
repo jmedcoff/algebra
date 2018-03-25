@@ -76,8 +76,7 @@
 		a+c & b+d \\
 		-(b+d) & a+c
 		\end{bmatrix} \in F $$
-		\item Closure under multiplication:
-		\item Closure under addition:
+		\item Closure under multiplication: 
 		$$ \begin{bmatrix}
 		a & b \\
 		-b & a
@@ -230,21 +229,51 @@
 	
 	$\newline$
 	\noindent{\textbf{59.}}
-	
+	By the division algorithm, we can write
+	$$f(x) = (x-a_1)q(x) + r(x)$$
+	but since $a_1$ is a root of $f$, $f(a_1) = 0$ so
+	$$f(a_1) =0= (0)q(a) + r(a) $$
+	and thus $r(a)=0$. Furthermore, $\deg r = 0$ because if $\deg f = n$, $\deg (x-a_1)q(x) = n$. Thus $r(x)$ is the constant function 0.
+	Suppose the statement is true for $a_1, \dots, a_{n-1}$ and we already have
+	$$f(x) = (x-a_1)\cdots(x-a_{n-1})q(x) .$$
+	When we divide by $(x-a_n)$ we obtain
+	$$f(x) = (x-a_1)\cdots(x-a_n)q'(x) + r'(x)$$
+	and furthermore, $a_n$ is a root so
+	$$f(a_n) = 0 = (a_n-a_1)\cdots(0)q'(a_n) + r'(a_n) $$
+	so once again $r'(a_n)$ is the zero constant function. The induction holds and the statement is true with $g$ being $q'$.
 	
 	$\newline$
 	\noindent{\textbf{60.}}
-	
+	If $n=0$, $f$ is a nonzero constant polynomial with no roots. Suppose the statement is true for all $g$ with $\deg g < n$ and $\deg f = n$. If $f$ has no roots in $R$, we are done; suppose $f$ has a root $a \in R$. Then we know by problem \textbf{61} that we can write
+	$$ f(x) = (x-a)g(x) $$
+	for some $g \in R[x]$. Then suppose $c \in R$ is an additional root of $f$ not equal to $a$. Then since $f(c) =0$ and $(a-c) \neq 0$, $g(c)$ must be zero since $R$ is a domain. Therefore, the roots of $f$ in $R$ are $a$ and the roots of $g$. Since $\deg g =n-1$, $g$ has at most $n-1$ roots by the induction hypothesis. Thus, $f$ has at most $n$ roots in $R$.
 	
 	$\newline$
 	\noindent{\textbf{61.}}
+	By the division algorithm,
+	$$f(x) = (x-a)g(x) + r(x) $$
+	with $g$, $r \in R[x]$. Then since $f(a)=0$,
+	$$ f(a) =0 = (a-a)g(a) + r(a) = r(a). $$
+	By the division algorithm, $\deg r < \deg (x-a)$, meaning $\deg r=0$. Thus $r$ is the constant zero polynomial and we write
+	$$f(x) = (x-a)g(x) .$$
 	
 	$\newline$
 	\noindent{\textbf{64.}}
 	Since $k[x]$ is a euclidean domain, we can obtain prime factorizations of $f$ and $g$. Each prime factor of $f$ and $g$ divides $h$, and $f$ and $g$ share no factors, since they are coprime. Therefore, the product of all these disjoint factors divides $h$, so $fg$ divides $h$.
 	
-	
-	
+	$\newline$
+	\noindent{\textbf{66.}}
+	Suppose instead that $\sqrt{1-x^2}$ is a rational function. Then we can write
+	$$ \sqrt{1-x^2} = \frac{p(x)}{q(x)} $$
+	assuming without loss of generality that $p$ and $q$ have no common factors. Then
+	$$1-x^2 = \frac{p(x)^2}{q(x)^2}$$
+	which implies
+	$$ p(x)^2 = (1-x^2)q(x)^2 $$
+	so $1-x^2$ is a factor of $p^2$. Then it must be a factor of $p$, so $p^2$ is divisible by $(1-x^2)^2$. Then
+	$$ p(x)^2 = (1-x^2)^2 p'(x) = (1-x^2)q(x)^2 $$
+	so
+	$$ (1-x^2) p'(x) = q(x)^2 $$
+	thus $(1-x^2)$ is a factor of $q^2$ and therefore $q$. Then $p$ and $q$ have a common factor, a contradiction. Therefore it must be that $\sqrt{1-x^2}$ is not a rational function.
 	
 	
 	
