@@ -8,13 +8,13 @@
 \author{Jason Medcoff}
 \date{}
 
-% 58, 59, 60, 61, 64, 66
+% 59, 60, 61, 66
 
 \begin{document}
 	\maketitle
 	
 	\noindent{\textbf{44.}}
-	i) The inverse of a bijection is a bijection, so we need only show $\psi$ is an isomorphism. Since $\varphi(a)\varphi(b) = \varphi(ab)$ and $\varphi(a^{-1}) = \varphi(a)^{-1}$,
+	i) The inverse of a bijection is a bijection, so we need only show $\psi$ is an homomorphism. Since $\varphi(a)\varphi(b) = \varphi(ab)$ and $\varphi(a^{-1}) = \varphi(a)^{-1}$,
 	$$ \psi(\varphi(a) \varphi(b)) = \psi(\varphi(ab)) = ab = \psi(\varphi(a)) \psi(\varphi(b)) . $$
 	
 	ii) The compositions of bijections is a bijection. Let $f: R \to S$ and $g: S \to T$, with $a$, $b \in R$. Then
@@ -65,6 +65,32 @@
 	$\newline$
 	\noindent{\textbf{55.}}
 	\begin{itemize}
+		\item Closure under addition:
+		$$ \begin{bmatrix}
+		a & b \\
+		-b & a
+		\end{bmatrix} + \begin{bmatrix}
+		c & d \\
+		-d & c
+		\end{bmatrix} = \begin{bmatrix}
+		a+c & b+d \\
+		-(b+d) & a+c
+		\end{bmatrix} \in F $$
+		\item Closure under multiplication:
+		\item Closure under addition:
+		$$ \begin{bmatrix}
+		a & b \\
+		-b & a
+		\end{bmatrix} \begin{bmatrix}
+		c & d \\
+		-d & c
+		\end{bmatrix} = \begin{bmatrix}
+		ac-bd & ad+bc \\
+		-bc-ad & -bd+ac
+		\end{bmatrix} = \begin{bmatrix}
+		ac-bd & ad+bc \\
+		-(ad+bc) & ac-bd
+		\end{bmatrix} \in F $$
 		\item Associativity of matrix addition: inherited.
 		\item Commutativity of matrix addition: inherited.
 		\item Additive identity: zero matrix.
@@ -191,13 +217,31 @@
 	
 	$\newline$
 	\noindent{\textbf{58.}}
+	Note that in $\mathbb{F}_5$, $x^2-x-2 = x^2+4x+3$ and $x^3-7x+6 = x^3+3x+1$. Then using the extended euclidean algorithm,
+	\begin{equation*}
+	\begin{split}
+	x^2+4x+3 &= (x^3+3x+1)(0) + (x^2+4x+3) \\
+	x^3+3x+1 &= (x^2+4x+3)(x+1) + (x+3) \\
+	x^2+4x+3 &= (x+3)(x+1) + (0)
+	\end{split}
+	\end{equation*}
+	so the gcd is $(x+3)$. We can express this as
+	$$ (x+3) = (4x+4)(x^2+4x+3) + (1)(x^3+3x+1) . $$
+	
+	$\newline$
+	\noindent{\textbf{59.}}
 	
 	
+	$\newline$
+	\noindent{\textbf{60.}}
 	
 	
+	$\newline$
+	\noindent{\textbf{61.}}
 	
-	
-	
+	$\newline$
+	\noindent{\textbf{64.}}
+	Since $k[x]$ is a euclidean domain, we can obtain prime factorizations of $f$ and $g$. Each prime factor of $f$ and $g$ divides $h$, and $f$ and $g$ share no factors, since they are coprime. Therefore, the product of all these disjoint factors divides $h$, so $fg$ divides $h$.
 	
 	
 	
