@@ -1,0 +1,59 @@
+\documentclass{amsart}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{a4paper}
+
+\newcommand{\problem}[1]{\noindent{\textbf{#1}}}
+
+\title{Homework 7}
+\author{Jason Medcoff}
+\date{}
+
+% 3.8 (page 303):  97, 100, 103
+
+% 4.1 (page 341): 2, 7, 8, 11, 15, 18
+
+% 4.1 (page 353): 24, 27, 28
+
+\begin{document}
+	\maketitle
+	
+	\problem{93.}
+	% iso thm for rings
+	We can use the isomorphism theorem by showing that there is a homomorphism $f: R[x]/ \to R$, demonstrating the kernel of $f$ to be $(x)$, and showing that the image of $f$ is $R$ itself. So first, choose $f$ such that $r(x)=r_0+\ldots+r_n x^n \mapsto r_0$; in other words, $f$ is the evaluation function that sends polynomials $r(x)$ to $r(0)$.
+	
+	This map is well defined since equality of polynomials is defined by equality of coefficients. The map is a homomorphism since
+	$$ f(r(x) + s(x)) = r_0 + s_0 = f(r(x)) + f(s(x)) $$
+	and
+	$$ f(r(x)s(x)) = r_0s_0 = f(r_0)f(s_0), $$
+	and furthermore, the zero polynomial obviously maps to zero in $R$. Thus $f$ is a homomorphism.
+	
+	The kernel of $f$ is given by
+	\begin{equation*}
+	\begin{split}
+	\ker f &= \{ r(x) \in R[x] : f(r(x)) = 0 \} \\
+	&= \{ r_1 x + \ldots + r_n x^n \} \\
+	&= (x)
+	\end{split}
+	\end{equation*}
+	since polynomials without constant terms are divisible by $x$ without remainder. Finally, the image of $f$ is clearly the entirety of $R$ since one can choose any constant polynomial $r(x) = r_0$ with $r_0 \in R$. Thus by the first isomorphism theorem, there exists an isomorphism between $R[x]/(x)$ and $R$.
+	
+	$\newline$
+	\problem{97.}
+	i) $F$ is well defined since for two conjugacy classes $[a] = [b]$,
+	$$ F([a]) = a^p \mod q 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+\end{document}
