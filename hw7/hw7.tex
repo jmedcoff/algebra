@@ -41,10 +41,34 @@
 	
 	$\newline$
 	\problem{97.}
-	i) $F$ is well defined since for two conjugacy classes $[a] = [b]$,
-	$$ F([a]) = a^p \mod q 
 	
+	\textbf{Lemma.} In a finite field of prime order $n$, $(a+b)^n = a^n + b^n$. By binomial coefficients,
+	$$ (a+b)^n = \sum_{k=0}^{n} {n \choose k} a^{n-k} b^k $$ 
+	where $$ {n \choose k} = \frac{n!}{k!(n-k)!} $$
+	but for $n>k$, $n$ divides $n!$ but not $k!$. Then the coefficients of all terms but the first and the last are divisible by the characteristic. All that is left is $a^n + b^n$.
 	
+	i) $F$ obeys the additive homomorphism rule since
+	$$ F(a+b) = a^p + b^p = (a+b)^p = F(a) + F(b) $$
+	since by binomial coefficients,
+	$$ (a+b)^p = \sum_{k=0}^{p} {p \choose k} a^{p-k} b^k $$ 
+	where $$ {p \choose k} = \frac{p!}{k!(p-k)!} $$
+	but since 
+	
+	$\newline$
+	\problem{100.}
+	i) By the lemma in 97, we can write $x^4 + 1 = x^4 + 1^4 = (x+1)^4$.
+	
+	ii) We can write
+	\begin{equation*}
+	\begin{split}
+	(x^2+ax+b)(x^2+cx+d) &= x^4 + cx^3 + dx^2 + ax^3 + acx^2 + adx + bx^2 + bcx + bd \\
+	&= x^4 + (c+a)x^3 + (d+ac+b)x^2 + (ad+bc)x + (bd) \\
+	&= x^4 + 1
+	\end{split}
+	\end{equation*}
+	and by equating coefficients, clearly $bd=1$, $c+a=0$ or $c=-a$, $d+ac+b = 0$, and $ad+bc = 0$. The latter two can be written as $d+b-a^2=0$ and $ad-ab=0$ or $a(d-b)=0$.
+	
+	iii) Suppose $b^2 \equiv -1 \mod p$. 
 	
 	
 	
