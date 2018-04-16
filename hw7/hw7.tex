@@ -10,11 +10,8 @@
 \author{Jason Medcoff}
 \date{}
 
-% 3.8 (page 303):  97, 100, 103
+% 3.8 (page 303): 100, 103
 
-% 4.1 (page 341): 2, 7, 8, 11, 15, 18
-
-% 4.1 (page 353): 24, 27, 28
 
 \begin{document}
 	\maketitle
@@ -49,14 +46,20 @@
 	
 	i) $F$ obeys the additive homomorphism rule since
 	$$ F(a+b) = a^p + b^p = (a+b)^p = F(a) + F(b) $$
-	since by binomial coefficients,
-	$$ (a+b)^p = \sum_{k=0}^{p} {p \choose k} a^{p-k} b^k $$ 
-	where $$ {p \choose k} = \frac{p!}{k!(p-k)!} $$
-	but since 
+	by the lemma. It obeys the multiplicative rule
+	$$ F(a) F(b) = a^p b^p = (ab)^p = F(ab) $$
+	and it sends 0 to 0 by $F(0) = 0^p = 0$.
+	It is injective since if we have $a\neq b$,
+	$$ F(a) = a^p \neq b^p = F(b) $$
+	and thus it is also surjective and therefore an isomorphism.
+	
+	ii) Since the Frobenius map is invertible, for every $a$ we can apply $F^{-1}(a)$ which gives the $p$th root of $a$.
+	
+	iii) If we consider $F_n(a) = F_n(b)$, we have $a^p^n = b^p^n$. Taking the $n$th root, we obtain $a^p = b^p$ and by (ii) we can take a $p$th root. Thus, $a=b$.
 	
 	$\newline$
 	\problem{100.}
-	i) By the lemma in 97, we can write $x^4 + 1 = x^4 + 1^4 = (x+1)^4$.
+	i) By the lemma in 97, we can write $x^4 + 1 = (x^2)^2 + (1^2)^2 = (x^2+1)^2$.
 	
 	ii) We can write
 	\begin{equation*}
@@ -121,20 +124,29 @@
 	
 	$\newline$
 	\problem{24.}
+	If the list is linearly independent, they span some vector space of $m$ dimensions. Furthermore, it must be that $m \leq \dim V$, otherwise the vectors would not be independent. Thus, since the vectors are from $V$ and span a space with dimension at most $V$, the span must be a subspace of $V$.
 	
-	
-	
-	
-	
-	
+	If we begin with the assumption that the list spans a subspace of $V$, we note that the number of vectors is equal to the dimension of the subspace. By corollary 4.24, the list is linearly independent.	
 	
 	$\newline$
 	\problem{27.}
+	Consider $A$ as a list of its column vectors, i.e.
+	$$ A = (a_1 a_2 \dots a_n) $$
+	If $\beta$ is in the column space, we can write it in terms of the column vectors
+	$$ \beta = \alpha_1 a_1 + \ldots + \alpha_n a_n $$
+	where $\alpha_i$ are scalars. If we take $x = (\alpha_1 \dots \alpha_n)$ then $Ax=\beta$, and we have a solution, so the system is consistent.
+	
+	On the other hand, if we begin with a solution $(\alpha_1 \dots \alpha_n)$ to $Ax=\beta$, then we can rewrite the system as
+	$$ \alpha_1 a_1 + \ldots + \alpha_n a_n = \beta $$
+	with $a_i$ representing the $i$th column in $A$. Then $\beta$ is a linear combination of the column vectors, and thus belongs to its column space.
 	
 	$\newline$
 	\problem{28.}
-	Suppose $A$ is singular. Then there is some nonzero vector $z$ in its null space. Then there is a $y$ such that $z=x-y$, and $x \neq y$. Therefore $Az=0$ implies $A(x-y) = 0$ so $Ax - Ay = 0$ and $Ax=Ay$. But if $Ax=b$, $Ay$ must equal $b$. But since $x$ is the unique solution, it must be that $y=x$. So $A$ is nonsingular.
-	
+	Since $A$ is invertible, $A^{-1}$ exists and we can derive
+	$$ Ax=b \implies A^{-1}Ax=A^{-1}b \implies x=A^{-1}b $$
+	and we know this is unique since if there were some other $x'$ such that $Ax'=b$, we have
+	$$ Ax'=b \implies A^{-1}Ax'=A^{-1}b \implies x'=A^{-1}b $$
+	so $x'=x$.
 	
 	
 	
