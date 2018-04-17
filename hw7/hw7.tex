@@ -55,7 +55,7 @@
 	
 	ii) Since the Frobenius map is invertible, for every $a$ we can apply $F^{-1}(a)$ which gives the $p$th root of $a$.
 	
-	iii) If we consider $F_n(a) = F_n(b)$, we have $a^p^n = b^p^n$. Taking the $n$th root, we obtain $a^p = b^p$ and by (ii) we can take a $p$th root. Thus, $a=b$.
+	iii) If we consider $F_n(a) = F_n(b)$, we have $(a^p)^n = (b^p)^n$. Taking the $n$th root, we obtain $a^p = b^p$ and by (ii) we can take a $p$th root. Thus, $a=b$.
 	
 	$\newline$
 	\problem{100.}
@@ -71,7 +71,37 @@
 	\end{equation*}
 	and by equating coefficients, clearly $bd=1$, $c+a=0$ or $c=-a$, $d+ac+b = 0$, and $ad+bc = 0$. The latter two can be written as $d+b-a^2=0$ and $ad-ab=0$ or $a(d-b)=0$.
 	
-	iii) Suppose $b^2 \equiv -1 \mod p$. 
+	iii) Suppose $b^2 \equiv -1 \mod p$. If $a=0$, we write
+	$$ x^4 + (d+b)x^2 + (bd) = (x^2+d)(x^2+b) $$
+	If $a\neq 0$, then
+	$$ x^4 + (d+b-a^2)x^2 + (a(d-b))x + (bd) $$
+	so it must be that $d=b$ by the cancellation property on the coefficient of $x$. Then
+	$$ x^4 + (2b-a^2)x^2 + b^2 $$
+	and $2b=a^2$ since $d=b$ so
+	$$ x^4 - 1 = (x^2+1)(x^2-1) . $$
+	
+	If on the other hand we suppose $a^2 \equiv \pm 2 \mod p$, then we write
+	$$ x^4 + (d+b-a^2)x^2 + (ad-bc)x + (bd) $$
+	If $a^2$ is $-2$,
+	$$ x^4 + (d+b+2)x^2 + bd $$
+	and because $d+b=a^2$, it must be that $d+b=-2$ so
+	$$ x^4 + (2-2)x^2 + bd = x^4 +2x^2 - 2x^2 + 1$$
+	which can be written as
+	$$ x^4 + 2x^2 - b^2x^2 + 1 $$
+	and we can write
+	$$ x^4 - bx^3 + x^2 + bx^3 - b^2x^2 + bx + x^2 - bx + 1 = (x^2+bx+1)(x^2-bx+1) . $$
+	
+	If we say $a^2$ is $2$, then similarly $d+b=2$ and we have
+	$$ x^4 + (-2+2)x^2 + bd = x^4 - 2x^2 + 2x^2 + 1 $$
+	where we can proceed as before to obtain $(x^2+bx+1)(x^2-bx+1)$.
+	
+	$\newline$
+	\problem{103.}
+	In $E$, we have the following eight elements:
+	$$\begin{matrix}
+		0 & 1 & x & x^2 \\
+		x+1 & x^2+1 & x^2+x & x^2+x+1
+	\end{matrix}$$
 	
 	$\newline$
 	\problem{2.}
