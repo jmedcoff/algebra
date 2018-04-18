@@ -18,7 +18,7 @@
 	
 	\problem{93.}
 	% iso thm for rings
-	We can use the isomorphism theorem by showing that there is a homomorphism $f: R[x]/ \to R$, demonstrating the kernel of $f$ to be $(x)$, and showing that the image of $f$ is $R$ itself. So first, choose $f$ such that $r(x)=r_0+\ldots+r_n x^n \mapsto r_0$; in other words, $f$ is the evaluation function that sends polynomials $r(x)$ to $r(0)$.
+	We can use the isomorphism theorem by showing that there is a homomorphism $f: R[x] \to R$, demonstrating the kernel of $f$ to be $(x)$, and showing that the image of $f$ is $R$ itself. So first, choose $f$ such that $r(x)=r_0+\ldots+r_n x^n \mapsto r_0$; in other words, $f$ is the evaluation function that sends polynomials $r(x)$ to $r(0)$.
 	
 	This map is well defined since equality of polynomials is defined by equality of coefficients. The map is a homomorphism since
 	$$ f(r(x) + s(x)) = r_0 + s_0 = f(r(x)) + f(s(x)) $$
@@ -39,7 +39,7 @@
 	$\newline$
 	\problem{97.}
 	
-	\textbf{Lemma.} In a finite field of prime order $n$, $(a+b)^n = a^n + b^n$. By binomial coefficients,
+	\textbf{Lemma.} In a finite field of prime characteristic $n$, $(a+b)^n = a^n + b^n$. By binomial coefficients,
 	$$ (a+b)^n = \sum_{k=0}^{n} {n \choose k} a^{n-k} b^k $$ 
 	where $$ {n \choose k} = \frac{n!}{k!(n-k)!} $$
 	but for $n>k$, $n$ divides $n!$ but not $k!$. Then the coefficients of all terms but the first and the last are divisible by the characteristic. All that is left is $a^n + b^n$.
@@ -55,7 +55,7 @@
 	
 	ii) Since the Frobenius map is invertible, for every $a$ we can apply $F^{-1}(a)$ which gives the $p$th root of $a$.
 	
-	iii) If we consider $F_n(a) = F_n(b)$, we have $(a^p)^n = (b^p)^n$. Taking the $n$th root, we obtain $a^p = b^p$ and by (ii) we can take a $p$th root. Thus, $a=b$.
+	iii) The map is injective by corollary 3.45.
 	
 	$\newline$
 	\problem{100.}
@@ -121,7 +121,7 @@
 	
 	$\newline$
 	\problem{7.}
-	Suppose $Ax=0$ with $x \neq 0$. Then it must be that for every column $i$ of $A$, $\sum a_i x_i = 0$ with at least one $x_i$ nonzero. This is a linear combination, and we know that a linear combination has a nontrivial solution if and only if the vectors are linearly dependent. Thus, the null space has a nontrivial solution if and only if the matrix column vectors are linearly dependent.
+	Suppose $Ax=0$ with $x \neq 0$. Then it must be that for every column $i$ of $A$, $\sum a_i x_i = 0$ with at least one $x_i$ nonzero. This is a linear combination, and we know that a linear combination has a nontrivial solution if and only if the vectors are linearly dependent. Thus, the null space contains a nontrivial solution if and only if the matrix column vectors are linearly dependent.
 	
 	$\newline$
 	\problem{8.}
@@ -158,7 +158,28 @@
 	\problem{24.}
 	If the list is linearly independent, they span some vector space of $m$ dimensions. Furthermore, it must be that $m \leq \dim V$, otherwise the vectors would not be independent. Thus, since the vectors are from $V$ and span a space with dimension at most $V$, the span must be a subspace of $V$.
 	
-	If we begin with the assumption that the list spans a subspace of $V$, we note that the number of vectors is equal to the dimension of the subspace. By corollary 4.24, the list is linearly independent.	
+	If we begin with the assumption that the list spans a subspace of $V$, we note that the number of vectors is equal to the dimension of the subspace. By corollary 4.24, the list is linearly independent.
+	
+	In the case of the given vectors, we can write a system
+	$$ a_1 v_1 + a_2 v_2 + a_3 v_3 = 0 $$
+	and express this as a matrix
+	$$ \begin{bmatrix}
+	\vdots & \vdots & \vdots \\
+	v_1 & v_2 & v_3 \\
+	\vdots & \vdots & \vdots
+	\end{bmatrix} \begin{bmatrix}
+	a_1 \\
+	a_2 \\
+	a_3
+	\end{bmatrix} = 0 $$
+	In the interest of saving paper, the process is omitted, but the result is
+	$$ \begin{bmatrix}
+	1 & 0 & 0 \\
+	0 & 1 & 0 \\
+	0 & 0 & 1 \\
+	0 & 0 & 0
+	\end{bmatrix} $$
+	So we find $a_1 = a_2 = a_3 = 0$ and the vectors are therefore linearly independent.
 	
 	$\newline$
 	\problem{27.}
